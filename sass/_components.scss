@@ -1,0 +1,132 @@
+@mixin btn-sm-modify{
+    font-size: 1rem;
+}
+
+@mixin btn-base{
+    font-size: 1.15rem;
+    padding: .5rem 2.5rem;
+    border-radius: .3rem;
+}
+
+$color-main: #0075FF;
+$color-third: #666666;
+$color-footer: #F4F7FE;
+
+.btn-main{
+    @include btn-base;
+    background-color: $color-main;
+    color: #FFF;
+    transition: opacity .2s ease;
+
+    &:hover{
+        opacity: .8;
+    }
+
+    &-s{
+        @extend .btn-main;
+        @include btn-sm-modify();
+        padding: 0.35rem 1.6rem;
+        border: 1px solid $color-main;
+    }
+}
+
+.btn-sec{
+    @include btn-base;
+    background-color: transparent;
+    color: #000;
+    transition: opacity .2s ease;
+
+    &:hover{
+        opacity: .7;
+    }
+
+    &-s{
+        @extend .btn-sec;
+        @include btn-sm-modify();
+        padding: 0.35rem 0rem;
+        border: 1px solid transparent;
+    }
+}
+
+.main-menu{
+    margin-bottom: 0;
+    padding-left: 0;
+    li{
+        padding: .5rem ;
+        font-size: .9rem;
+        list-style: none;
+        display: inline-block;
+
+        a{
+            color: #000;
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity .2s ease;
+
+            &:hover{
+                opacity: .6;
+            }
+
+        }
+    }
+}
+
+.icon-sm{ 
+    i{
+        font-size: 1.2rem;
+        padding: .4rem .6rem;
+        box-shadow: 0 0 5px rgba(0,0,0,.3);
+        border-radius: 50%;
+        color: $color-main;
+    }
+}
+
+.benefit-card{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    gap: 1rem;
+    .icon{
+        color: $color-main;
+        font-size: 5rem;
+        /* border: 1px solid black; */
+    }
+    .text{
+        .benefit-{
+            padding: 0.2rem;
+            font-weight: 600;
+        }
+        .benefit-description{
+            color: $color-third;
+        }
+    }
+    .cta{
+        margin-top: 2.5rem;
+        transition: opacity .2s ease;
+        color: $color-main;
+        text-decoration: none;
+
+        &:hover{
+            opacity: .7;
+        }
+    }
+}
+
+.icon-desc{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .icon{
+        color: $color-main;
+        font-size: 6rem;
+        padding: 0;
+    }
+    .icon-title{
+        font-size: 1.2rem;
+        margin-top: -1rem;
+    }
+}
